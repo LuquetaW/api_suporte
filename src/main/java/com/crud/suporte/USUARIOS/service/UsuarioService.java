@@ -18,4 +18,10 @@ public class UsuarioService {
     public UsuarioDTO criarUsuario(Usuario usuario){
         return new UsuarioDTO(usuarioRepository.save(usuario));
     }
+
+    public UsuarioDTO buscarUsuarioPorId(Long id) {
+        Usuario usuario = usuarioRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
+        return new UsuarioDTO(usuario);
+    }
 }
