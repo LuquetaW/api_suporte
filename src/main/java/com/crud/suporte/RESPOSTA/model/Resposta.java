@@ -1,14 +1,31 @@
 package com.crud.suporte.RESPOSTA.model;
 
 
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-import com.crud.suporte.USUARIOS.model.Usuario;
 import com.crud.suporte.CHAMADO.model.Chamado;
+import com.crud.suporte.USUARIOS.model.Usuario;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "respostas")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "tb_respostas")
 public class Resposta {
 
     @Id
@@ -28,30 +45,11 @@ public class Resposta {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "chamado_id", nullable = false)
     private Chamado chamado;
-
-    // Construtores
-    public Resposta() {}
-
+    
     public Resposta(String mensagem, LocalDateTime dataResposta, Usuario usuario, Chamado chamado) {
         this.mensagem = mensagem;
         this.dataResposta = dataResposta;
         this.usuario = usuario;
         this.chamado = chamado;
     }
-
-    // Getters e setters (ou use Lombok para gerar automaticamente)
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getMensagem() { return mensagem; }
-    public void setMensagem(String mensagem) { this.mensagem = mensagem; }
-
-    public LocalDateTime getDataResposta() { return dataResposta; }
-    public void setDataResposta(LocalDateTime dataResposta) { this.dataResposta = dataResposta; }
-
-    public Usuario getUsuario() { return usuario; }
-    public void setUsuario(Usuario usuario) { this.usuario = usuario; }
-
-    public Chamado getChamado() { return chamado; }
-    public void setChamado(Chamado chamado) { this.chamado = chamado; }
 }
