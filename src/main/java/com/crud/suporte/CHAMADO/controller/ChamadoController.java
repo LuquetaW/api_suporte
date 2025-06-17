@@ -1,10 +1,12 @@
 package com.crud.suporte.CHAMADO.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 import com.crud.suporte.CHAMADO.dto.ChamadoDTO;
 import com.crud.suporte.CHAMADO.model.Chamado;
@@ -28,5 +30,9 @@ public class ChamadoController {
     @PostMapping
     public ChamadoDTO criarChamado(@RequestBody Chamado chamado) {
         return new ChamadoDTO(chamadoRepository.save(chamado));
+    }
+    @GetMapping
+    public List<Chamado> listarChamados() {
+        return chamadoRepository.findAll();
     }
 }
