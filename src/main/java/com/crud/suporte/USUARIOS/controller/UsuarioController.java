@@ -1,6 +1,8 @@
 package com.crud.suporte.USUARIOS.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,7 @@ public class UsuarioController {
     public UsuarioService usuarioService;
 
     @PostMapping
-    public UsuarioDTO criarUsuario(@RequestBody Usuario usuario){
-        return usuarioService.criarUsuario(usuario);
+    public ResponseEntity<UsuarioDTO> criarUsuario(@RequestBody Usuario usuario){
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.criarUsuario(usuario));
     }
 }
