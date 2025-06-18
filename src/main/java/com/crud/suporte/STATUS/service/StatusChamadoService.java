@@ -1,20 +1,19 @@
 
 package com.crud.suporte.STATUS.service;
 
-import com.crud.suporte.STATUS.model.StatusChamado;
-import com.crud.suporte.STATUS.repository.StatusChamadoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.crud.suporte.STATUS.model.StatusChamado;
+import com.crud.suporte.STATUS.repository.StatusChamadoRepository;
 
 @Service
 public class StatusChamadoService {
 
     private final StatusChamadoRepository repository;
 
-    @Autowired
     public StatusChamadoService(StatusChamadoRepository repository) {
         this.repository = repository;
     }
