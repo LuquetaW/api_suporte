@@ -29,4 +29,5 @@ public class UsuarioController {
     public UsuarioDTO buscarUsuarioPorId(@RequestParam Long id) {
         return usuarioService.buscarUsuarioPorId(id);
     }
+
 }

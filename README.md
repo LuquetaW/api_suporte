@@ -39,7 +39,10 @@ O arquivo src/main/resources/application.properties já está configurado para:
 spring.datasource.url=jdbc:mysql://localhost:3306/suporte_crud
 spring.datasource.username=root
 spring.datasource.password=root
+<<<<<<< HEAD
 **Importante criar o banco de dados conforme tratado acima, ou configure conforme sua prefereência**
+=======
+>>>>>>> fa399a7cbeb410bba729d1d4d6d70ecdcfd44081
 
 3. Compile e execute a aplicação
 No terminal, execute:
