@@ -3,14 +3,14 @@ package com.crud.suporte.RESPOSTA.controller;
 
 import java.time.LocalDateTime;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import com.crud.suporte.RESPOSTA.repository.RespostaRepository;
-import com.crud.suporte.RESPOSTA.service.RespostaService;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.crud.suporte.RESPOSTA.dto.RespostaDTO;
 import com.crud.suporte.RESPOSTA.model.Resposta;
+import com.crud.suporte.RESPOSTA.repository.RespostaRepository;
 
 @RestController
 @RequestMapping("/respostas")
@@ -18,10 +18,6 @@ public class RespostaController {
 
     private final RespostaRepository respostaRepository;
 
-    @Autowired
-    private RespostaService respostaService;
-
-    @Autowired
     public RespostaController(RespostaRepository respostaRepository) {
         this.respostaRepository = respostaRepository;
     }

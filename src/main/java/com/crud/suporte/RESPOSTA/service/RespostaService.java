@@ -4,7 +4,6 @@ package com.crud.suporte.RESPOSTA.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.crud.suporte.RESPOSTA.model.Resposta;
@@ -15,7 +14,6 @@ public class RespostaService {
 
     private final RespostaRepository respostaRepository;
 
-    @Autowired
     public RespostaService(RespostaRepository respostaRepository) {
         this.respostaRepository = respostaRepository;
     }
