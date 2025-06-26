@@ -1,76 +1,114 @@
-# Sistema de Suporte CRUD
 
-Este projeto é um sistema de suporte desenvolvido como parte de um trabalho acadêmico para a faculdade. Ele utiliza Spring Boot, JPA, MySQL e Docker para fornecer uma API RESTful para gerenciamento de usuários, chamados e respostas.
+# 🛠️ Sistema de Suporte CRUD
 
-## Objetivo
+Este projeto é um sistema de suporte desenvolvido como parte de um trabalho acadêmico. Ele utiliza **Spring Boot**, **JPA**, **MySQL** e **Docker** para fornecer uma **API RESTful** voltada ao gerenciamento de usuários, chamados e respostas.
 
-O objetivo deste sistema é permitir o cadastro, consulta e gerenciamento de usuários, chamados de suporte e respostas, servindo como base para estudos e práticas de desenvolvimento backend com Java e Spring Boot.
+---
 
-## Tecnologias Utilizadas
+## 🎯 Objetivo
 
-- Java 21
-- Spring Boot 3.5.0
-- Spring Data JPA
-- MySQL
-- Docker (para banco de dados)
-- Lombok
+Permitir o cadastro, consulta e gerenciamento de:
 
-## Pré-requisitos
+- Usuários  
+- Chamados de suporte  
+- Respostas  
+
+O sistema serve como base para **estudos e práticas** de desenvolvimento **back-end com Java e Spring Boot**.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- ✅ Java 21  
+- ✅ Spring Boot 3.5.0  
+- ✅ Spring Data JPA  
+- ✅ MySQL  
+- ✅ Docker (para banco de dados)  
+- ✅ Lombok  
+
+---
+
+## 📦 Pré-requisitos
+
+Certifique-se de ter as seguintes ferramentas instaladas:
 
 - [Java 21+](https://adoptium.net/)
 - [Docker](https://www.docker.com/)
-- [Maven](https://maven.apache.org/) (ou utilize o wrapper `mvnw` incluso no projeto)
+- [Maven](https://maven.apache.org/) (ou utilize o wrapper `./mvnw`)
 - [Git](https://git-scm.com/)
 
-## Como executar o projeto
+---
 
-### 1. Suba o banco de dados MySQL com Docker
+## ⚙️ Como Executar o Projeto
 
-No terminal, execute:
+### 1️⃣ Suba o banco de dados MySQL com Docker
 
-```sh
+No terminal:
+
+```bash
 docker compose up -d
 ```
-O banco estará disponível em localhost:3307 (porta externa).
 
-2. Configure o acesso ao banco
-O arquivo src/main/resources/application.properties já está configurado para:
+O banco estará disponível em: `localhost:3307`
 
+---
+
+### 2️⃣ Configure o acesso ao banco
+
+O arquivo `src/main/resources/application.properties` já está configurado da seguinte forma:
+
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/suporte_crud
 spring.datasource.username=root
 spring.datasource.password=root
-<<<<<<< HEAD
-**Importante criar o banco de dados conforme tratado acima, ou configure conforme sua prefereência**
-=======
->>>>>>> fa399a7cbeb410bba729d1d4d6d70ecdcfd44081
-
-3. Compile e execute a aplicação
-No terminal, execute:
 ```
+
+> **⚠️ Certifique-se de criar o banco de dados com o nome `suporte_crud`, ou ajuste as configurações conforme sua preferência.**
+
+---
+
+### 3️⃣ Compile e execute a aplicação
+
+No terminal:
+
+```bash
 ./mvnw spring-boot:run
 ```
 
-ou, no Windows:
-[mvnw.cmd](http://_vscodecontentref_/1) spring-boot:run
+No Windows:
 
-A aplicação estará disponível em http://localhost:8080.
+```bash
+mvnw.cmd spring-boot:run
+```
 
-Endpoints principais
-POST /usuarios — Cria um novo usuário
-GET /usuarios?id={id} — Busca usuário por ID
-POST /chamados — Cria um novo chamado
-GET /chamados — Lista todos os chamados
-POST /respostas — Cria uma nova resposta
-...
+A aplicação ficará disponível em: [http://localhost:8080](http://localhost:8080)
 
-Observações
-Este projeto é exclusivamente para fins acadêmicos.
+---
 
-Sinta-se à vontade para adaptar e evoluir o código conforme as necessidades do seu trabalho.
-Autor
-Desenvolvido por:
--Lucas Wessendorf de Araujo
--Helio Manoel Wojciki
--Victor Gabriel Alves Carneiro
--Felipe Graniska
--Eduardo Alan Dos Santos
+## 📡 Endpoints Principais
+
+| Método | Rota                      | Descrição                    |
+|--------|---------------------------|------------------------------|
+| POST   | `/usuarios`               | Cria um novo usuário         |
+| GET    | `/usuarios?id={id}`       | Busca usuário por ID         |
+| POST   | `/chamados`               | Cria um novo chamado         |
+| GET    | `/chamados`               | Lista todos os chamados      |
+| POST   | `/respostas`              | Cria uma nova resposta       |
+
+---
+
+## 📝 Observações
+
+Este projeto é de uso **exclusivamente acadêmico**.
+
+Sinta-se à vontade para **adaptar e evoluir** o código conforme necessário.
+
+---
+
+## 👨‍💻 Autores
+
+- Lucas Wessendorf de Araujo  
+- Helio Manoel Wojciki  
+- Victor Gabriel Alves Carneiro  
+- Felipe Graniska  
+- Eduardo Alan Dos Santos
